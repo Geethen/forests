@@ -1,0 +1,13 @@
+[project]
+name = "geethen-forests"
+version = "0.1.0"
+description = "Effektovervåking 2026-2030, opsjon 2 (fjernmåling) - forest analysis"
+requires-python = ">=3.10"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
