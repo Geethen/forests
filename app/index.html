@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest Monitor &mdash; Deforestation Alerts &amp; Cover</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="topbar__title">
+          <h1>Forest Monitor</h1>
+          <p>Deforestation alerts &amp; forest cover &mdash; olivinskog &amp; kalklindeskog</p>
+        </div>
+        <div class="topbar__status" id="data-status">Loading data&hellip;</div>
+      </header>
+
+      <main class="layout">
+        <section class="panel panel--map">
+          <div class="panel__header">
+            <h2>Alert map</h2>
+            <div class="controls" id="map-controls">
+              <label>
+                Forest type
+                <select id="filter-forest-type">
+                  <option value="all">All</option>
+                  <option value="olivinskog">Olivinskog</option>
+                  <option value="kalklindeskog">Kalklindeskog</option>
+                </select>
+              </label>
+              <label>
+                Alert type
+                <select id="filter-alert-type">
+                  <option value="all">All</option>
+                  <option value="deforestation">Deforestation</option>
+                  <option value="degradation">Degradation</option>
+                  <option value="spruce_encroachment">Spruce encroachment</option>
+                </select>
+              </label>
+              <label>
+                From
+                <input type="month" id="filter-date-from" value="2017-01" min="2017-01" max="2025-12" />
+              </label>
+              <label>
+                To
+                <input type="month" id="filter-date-to" value="2025-12" min="2017-01" max="2025-12" />
+              </label>
+            </div>
+          </div>
+          <div id="map"></div>
+          <div class="legend">
+            <span class="legend__item"><i class="dot dot--olivinskog"></i> Olivinskog area</span>
+            <span class="legend__item"><i class="dot dot--kalklindeskog"></i> Kalklindeskog area</span>
+            <span class="legend__item"><i class="dot dot--alert"></i> Alert (size = area, ha)</span>
+          </div>
+        </section>
+
+        <section class="panel panel--charts">
+          <div class="panel__header">
+            <h2>Forest cover over time</h2>
+            <div class="controls">
+              <label>
+                Resolution
+                <select id="cover-resolution">
+                  <option value="annual" selected>Annual</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="chart-cover" class="chart"></div>
+
+          <div class="panel__header">
+            <h2>Alerts over time</h2>
+          </div>
+          <div id="chart-alerts" class="chart"></div>
+
+          <div class="panel__header">
+            <h2>Summary</h2>
+          </div>
+          <div id="summary-cards" class="summary-cards"></div>
+        </section>
+      </main>
+
+      <footer class="footer" id="footer-note"></footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

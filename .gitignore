@@ -18,9 +18,23 @@ data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
+# Extraction outputs (large parquet + DuckDB buffer + resume checkpoint)
+data/*.parquet
+data/*.duckdb
+data/*.checkpoint.json
+
 # Results / outputs
 results/*
 !results/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Node / dashboard build artifacts
+node_modules/
+app/dist/
+.vite/
 
 # OS / editor
 .DS_Store
