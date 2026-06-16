@@ -17,11 +17,16 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/processed/olivinskog_union.*
+!data/processed/kalklindeskog_union.*
 
 # Extraction outputs (large parquet + DuckDB buffer + resume checkpoint)
 data/*.parquet
 data/*.duckdb
 data/*.checkpoint.json
+
+# GFW Data API key cache (secret)
+data/.gfw_apikey.json
 
 # Results / outputs
 results/*
